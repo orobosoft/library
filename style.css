@@ -209,3 +209,34 @@ fieldset input {
 	color: #d60729;
 	outline: #d60729 solid 1px;
 }
+
+/* BOOK CARD STYLING */
+.book {
+	min-height: 32rem;
+	width: 25rem;
+	gap: 1rem;
+	text-transform: capitalize;
+}
+.book__title {
+	font-weight: bold;
+	font-size: 2.5rem;
+}
+.book__author {
+	font-size: 2rem;
+}
+.book span {
+	display: flex;
+	flex-direction: column;
+	color: #47464d;
+	font-size: 1.5rem;
+	font-weight: normal;
+}
+.book__btns {
+	margin-top: auto;
+	justify-content: space-between;
+	gap: 1rem;
+}
+.books {
+	flex-wrap: wrap;
+  justify-content: center;
+}
