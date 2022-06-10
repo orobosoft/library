@@ -42,3 +42,31 @@ function addBookToLibrary(formData) {
 	myLibrary.push(newBook);
 	displayBook();
 }
+
+//Add html book card
+function displayBook() {
+	let books = document.querySelector(".books");
+	books.innerHTML = "";
+
+	myLibrary.forEach((book, index) => {
+		const text = `<div class="book card" data-pos = '${index}'>
+				<h2 class="book__title">
+					<span>Title:</span> ${book.title}
+					</h2>
+					<p class="book__author">
+					<span>Author:</span> ${book.author}
+					</p>
+				<p class="book__pages">
+					<span>Pages:</span> ${book.numOfPages}
+				</p>
+				<p class="book__read-status">
+				<span>Read Status:</span> ${book.readStatus}
+				</p>
+				<div class="book__btns flex">
+				<button class="btn btn-toggle">Update</button>
+				<button class="btn btn-del">Remove</button>
+				</div>
+				</div>`;
+		books.innerHTML += text;
+	});
+}
