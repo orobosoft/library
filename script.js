@@ -70,3 +70,13 @@ function displayBook() {
 		books.innerHTML += text;
 	});
 }
+
+//GET FORM DATA
+function getFormData(e) {
+	e.preventDefault();
+	const data = Object.fromEntries(new FormData(e.target).entries());
+
+	addBookToLibrary(data);
+	document.querySelector(".modal").style.display = "none";
+	document.querySelector("form").reset();
+}
