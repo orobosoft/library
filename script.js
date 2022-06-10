@@ -80,3 +80,36 @@ function getFormData(e) {
 	document.querySelector(".modal").style.display = "none";
 	document.querySelector("form").reset();
 }
+
+//EVENT LISTENERS
+//Form data
+document
+	.querySelector("form")
+	.addEventListener("submit", (e) => getFormData(e));
+
+//Update and remove btns
+document.addEventListener("click", (e) => {
+	//Remove button
+	if (e.target.className === "btn btn-del") {
+		const arrayIndex = e.target.parentElement.parentElement.dataset.pos;
+
+		myLibrary.splice(arrayIndex, 1);
+		displayBook();
+	}
+	//Toggle read button
+	if (e.target.className === "btn btn-toggle") {
+		const arrayIndex = e.target.parentElement.parentElement.dataset.pos;
+
+		myLibrary[arrayIndex].toggleRead();
+		displayBook();
+	}
+});
+
+//Close button
+document.querySelector(".close").addEventListener("click", () => {
+	document.querySelector(".modal").style.display = "none";
+});
+//Add book button
+document.querySelector(".add-book").addEventListener("click", () => {
+	document.querySelector(".modal").style.display = "flex";
+});
